@@ -1,9 +1,9 @@
 var timer = 0;
-var current = 0;
 var rnd;
-var arr = [1,2,3,4,5,6];
-var death = 1;
-var deathHover = false;
+var current;
+var arr = [];
+var death;
+var deathHover;
 
 // RANDOM DIV ORDER
 function randomDivs() {
@@ -28,7 +28,10 @@ function resetVideos() {
     $('#video'+ i).attr('src', 'video/non_morte/'+ randomInt(1, 12) +'.mp4');
     $('#video'+ i).removeClass('death');
   }
+  // audio
+  for (var i = 0; i < 6; i++) {$('.video').get(i).volume = 0}
 }
+resetVideos();
 
 // CURRENT VIDEO
 $('.video').hover(
@@ -36,6 +39,9 @@ $('.video').hover(
     current = parseInt($(this).attr('number'));
     $(this).addClass('current');
     if ($(this).hasClass('death')) {deathHover = true} else {deathHover = false}
+    // audio
+    for (var i = 0; i < 6; i++) {$('.video').get(i).volume = 0}
+    $(this).get(0).volume = 1;
   },
   function() {
     $(this).removeClass('current');
@@ -146,6 +152,6 @@ function randomInt(min, max) {
 $(document).bind('mousemove', function(e){
    $('#point').css({
      top: e.pageY - $("#point").height()/2,
-     left: e.pageX - $("#point").width()/2 
+     left: e.pageX - $("#point").width()/2
    });
  });
