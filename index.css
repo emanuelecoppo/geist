@@ -5,6 +5,9 @@
 ::-webkit-scrollbar {
     display: none;
 }
+::selection {
+    background: #ccc;
+}
 
 /*--------------------FONTS--------------------*/
 
@@ -40,6 +43,30 @@ em {
   font-style: italic;
 }
 
+/*--------------------TEXT--------------------*/
+
+h1 {
+  font-size: 24px;
+}
+p, .portrait::after {
+  font-size: 13px;
+  margin: 0;
+  line-height: 1.5;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+.under {
+  text-decoration: underline;
+}
+.underHover:hover {
+  text-decoration: underline;
+}
+.pointer {
+  cursor: pointer;
+}
+
 /*--------------------GENERAL--------------------*/
 
 html, body {
@@ -47,4 +74,107 @@ html, body {
   padding: 0;
   color: #000;
   background-color: #fff;
+}
+body {
+  width: 850px;
+  margin: 25px auto;
+}
+#header > * {
+  display: inline-block;
+}
+#logo {
+  width: 45px;
+  margin-right: 20px;
+}
+.border {
+  border: 1px solid #000;
+}
+#lang {
+  float: right;
+}
+#main {
+  width: auto;
+  padding: 30px 20px;
+}
+#footer > div {
+  width: 200px;
+  float: left;
+}
+#footer > div:last-child {
+  float: right;
+}
+
+/*--------------------NAV--------------------*/
+
+#nav > div {
+  display: inline-block;
+  width: 200px;
+  border: 1px solid #000;
+  border-bottom: none;
+}
+
+/*--------------------MAIN 1 (FILMATI)--------------------*/
+
+#main1 > div {
+  display: inline-block;
+  vertical-align: top;
+}
+video {
+  background-color: #000;
+  width: 100%;
+  height: 400px;
+}
+#controls {
+  margin-top: 10px;
+}
+#controls i:not(:last-child) {
+  margin-right: 10px;
+}
+#controls i:last-child {
+  float: right;
+}
+
+/*--------------------MAIN 2 (MACCHINA)--------------------*/
+
+.image {
+  width: 70%;
+  height: 400px;
+  margin: auto;
+  background-image: url(img/1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#gallery {
+  text-align: center;
+}
+#gallery p {
+  display: inline-block;
+}
+#gallery p:not(:last-child) {
+  margin-right: 10px;
+}
+
+/*--------------------MAIN 3 (SUPPORTO)--------------------*/
+
+#main3 > div {
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+}
+.portrait {
+  display: inline-block;
+  width: 30%;
+  background-color: #ccc;
+  height: 100px;
+  position: relative;
+  margin-bottom: 30px;
+}
+.portrait::after {
+  content: attr(fake);
+  position: absolute;
+  bottom: -20px;
+}
+.portrait:hover::after {
+  content: attr(real);
 }
