@@ -11,84 +11,99 @@
 
     <div id="header">
       <img id="logo" src="img/geist.svg">
-      <p class="mono border">AREA RISERVATA</p>
-      <p id="lang"><span>DE</span>&nbsp;&nbsp;&nbsp;<span class="under">IT</span></p>
+      <p id="area" class="mono">AREA RISERVATA</p>
+      <p id="lang"><span class="pointer underlineHover">DE</span>&nbsp;&nbsp;&nbsp;<span class="pointer underline underlineHover">IT</span></p>
     </div>
 
     <h1>Schadenfreudemetertest</h1>
     <p class="mono">CORSO DI AGGIORNAMENTO TELEMATICO</p>
 
     <div id="nav">
-      <div id="nav1" class="mono pointer">FILMATI</div>
-      <div id="nav2" class="mono pointer">LA MACCHINA</div>
-      <div id="nav3" class="mono pointer">SUPPORTO</div>
+      <div id="nav1" class="mono pointer nav navActive">FILMATI</div><!--
+   --><div id="nav2" class="mono pointer nav">LA MACCHINA</div><!--
+   --><div id="nav3" class="mono pointer nav">SUPPORTO</div>
     </div>
 
-    <div id="main" class="border">
+    <div id="main">
 
       <div id="main1">
-        <div>
-          <p class="mono">PARTE 01</p>
-          <p>Introduzione al corso</p>
-          <p class="mono">PARTE 02</p>
-          <p>Morbosità umana</p>
-          <p class="mono">PARTE 03</p>
-          <p>Schadenfreude</p>
-          <p class="mono">PARTE 04</p>
-          <p>Teoria della comparazione sociale</p>
-          <p class="mono">PARTE 05</p>
-          <p>La macchina</p>
-          <p class="mono">PARTE 06</p>
-          <p>Sperimentazione umana</p>
-          <p class="mono">PARTE 07</p>
-          <p>Saluti finali</p>
-        </div>
-        <div id="player">
+        <div id="videoList">
+          <div class="videoNum" number="1" >
+            <p class="mono small">PARTE 01</p>
+            <p class="pointer videoTitle">Introduzione al corso</p>
+          </div>
+          <div class="videoNum" number="2" >
+            <p class="mono small">PARTE 02</p>
+            <p class="pointer underlineHover videoTitle">Morbosità umana</p>
+          </div>
+          <div class="videoNum" number="3" >
+            <p class="mono small">PARTE 03</p>
+            <p class="pointer underlineHover videoTitle">Schadenfreude</p>
+          </div>
+          <div class="videoNum" number="4" >
+            <p class="mono small">PARTE 04</p>
+            <p class="pointer underlineHover videoTitle">Teoria della comparazione sociale</p>
+          </div>
+          <div class="videoNum" number="5" >
+            <p class="mono small">PARTE 05</p>
+            <p class="pointer underlineHover videoTitle">La macchina</p>
+          </div>
+          <div class="videoNum" number="6" >
+            <p class="mono small">PARTE 06</p>
+            <p class="pointer underlineHover videoTitle">Sperimentazione umana</p>
+          </div>
+          <div class="videoNum" number="7" >
+            <p class="mono small">PARTE 07</p>
+            <p class="pointer underlineHover videoTitle">Saluti finali</p>
+          </div>
+        </div><!--
+     --><div id="player">
           <video src=""></video>
           <div id="controls">
-            <i class="fas fa-play"></i>
-            <i class="fas fa-pause"></i>
-            <i class="fas fa-step-backward"></i>
-            <i class="fas fa-step-forward"></i>
-            <i class="fas fa-expand-arrows-alt"></i>
+            <i class="pointer fas fa-play"></i>
+            <i class="pointer fas fa-pause"></i>
+            <i class="pointer fas fa-step-backward"></i>
+            <i class="pointer fas fa-step-forward"></i>
+            <i class="pointer fas fa-expand-arrows-alt"></i>
           </div>
         </div>
       </div>
 
       <div id="main2">
-        <div class="image"></div>
         <div id="gallery">
-            <p class="mono pointer underHover">«Indietro</p>
-            <p class="mono pointer underHover" number="1">1</p>
-            <p class="mono pointer underHover" number="2">2</p>
-            <p class="mono pointer underHover" number="3">3</p>
-            <p class="mono pointer underHover" number="4">4</p>
-            <p class="mono pointer underHover" number="5">5</p>
-            <p class="mono pointer underHover" number="6">6</p>
-            <p class="mono pointer underHover">Avanti»</p>
+          <div class="galleryImg" style="background-image:url(img/1.png)"></div>
+          <div class="galleryImg" style="background-image:url(img/2.png)"></div>
+          <div class="galleryImg" style="background-image:url(img/3.png)"></div>
+          <div class="galleryImg" style="background-image:url(img/4.png)"></div>
+          <div class="galleryImg" style="background-image:url(img/5.png)"></div>
+          <div class="galleryImg" style="background-image:url(img/6.png)"></div>
+        </div>
+        <div id="galleryNav">
+            <p class="mono pointer underlineHover" id="galleryPrev">«Indietro</p>
+            <p class="mono pointer underlineHover galleryNum" number="1">1</p>
+            <p class="mono pointer underlineHover galleryNum" number="2">2</p>
+            <p class="mono pointer underlineHover galleryNum" number="3">3</p>
+            <p class="mono pointer underlineHover galleryNum" number="4">4</p>
+            <p class="mono pointer underlineHover galleryNum" number="5">5</p>
+            <p class="mono pointer underlineHover galleryNum" number="6">6</p>
+            <p class="mono pointer underlineHover" id="galleryNext">Avanti»</p>
         </div>
       </div>
 
       <div id="main3">
         <div>
-          <p>Per eventuali chiarimenti o informazioni aggiuntive, rivolgersi direttamente ai responsabili del Dipartimento di Antropologia.</p>
-          <p class="mono">UFFICI</p>
+          <p>Per eventuali chiarimenti o informazioni aggiuntive, rivolgersi direttamente ai responsabili del <em>Dipartimento di Antropologia.</em></p>
+          <p class="mono small">UFFICI</p>
           <p>Lentzeallee 94 14195, Berlino</p>
-          <p>Lentzeallee 94 14195, Berlino</p>
-          <p>Lentzeallee 94 14195, Berlino</p>
-          <p class="mono">CONTATTI</p>
-          <p>adolfhitler@geistlab.de</p>
-          <p>adolfhitler@geistlab.de</p>
-          <p>adolfhitler@geistlab.de</p>
-          <p>adolfhitler@geistlab.de</p>
-          <p>adolfhitler@geistlab.de</p>
-        </div>
-        <div id="staff">
-          <div class="portrait" fake="Adolf Hitler" real="Alessia Arosio"></div>
-          <div class="portrait" fake="Adolf Hitler" real="Lorenzo Bernini"></div>
-          <div class="portrait" fake="Adolf Hitler" real="Emanuele Coppo"></div>
-          <div class="portrait" fake="Adolf Hitler" real="Enrico Monasteri"></div>
-          <div class="portrait" fake="Adolf Hitler" real="Filippo Testa"></div>
+          <p class="mono small">CONTATTI</p>
+          <p class="pointer underlineHover">adolfhitler@geistlab.de</p>
+        </div><!--
+     --><div id="staff">
+          <div class="portrait" style="" fake="Adolf Hitler" real="Alessia Arosio"></div><!--
+       --><div class="portrait" style="" fake="Adolf Hitler" real="Lorenzo Bernini"></div><!--
+       --><div class="portrait" style="" fake="Adolf Hitler" real="Emanuele Coppo"></div><!--
+       --><div class="portrait" style="" fake="Adolf Hitler" real="Enrico Monasteri"></div><!--
+       --><div class="portrait" style="" fake="Adolf Hitler" real="Filippo Testa"></div>
         </div>
       </div>
 
@@ -96,15 +111,15 @@
 
     <div id="footer">
       <div>
-        <p class="mono">SEDE</p>
+        <p class="mono small">SEDE</p>
         <p>Lentzeallee 94 14195, Berlino</p>
-      </div>
-      <div>
-        <p class="mono">SOCIAL</p>
-        <p><a class="underHover" href="http://instagram.com/geist.lab">Instagram</a></p>
-      </div>
-      <div>
-        <p class="mono">&copy; 2020</p>
+      </div><!--
+   --><div>
+        <p class="mono small">SOCIAL</p>
+        <p><a class="underlineHover" href="http://instagram.com/geist.ita">Instagram</a></p>
+      </div><!--
+   --><div>
+        <p class="mono small">&copy; 2020</p>
         <p>Gedankliches Experimentelles Institut für Spezielle Therapien</p>
       </div>
     </div>

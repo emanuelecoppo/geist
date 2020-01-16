@@ -1,0 +1,63 @@
+var number = 1;
+$('.galleryImg').hide();
+$('.galleryImg:nth-child('+ number +')').show();
+
+$('.galleryNum').click(function() {
+  number = parseFloat($(this).attr('number'));
+  $('.galleryImg').hide();
+  $('.galleryImg:nth-child('+ number +')').show();
+  $('.galleryNum').removeClass('underline');
+  $(this).addClass('underline');
+});
+$('#galleryPrev').click(function() {
+  number = parseFloat($('.galleryNum.underline').attr('number'));
+  if (number > 1 && number <= 6) {
+    $('.galleryImg').hide();
+    $('.galleryImg:nth-child('+ number-1 +')').show();
+    $('.galleryNum').removeClass('underline');
+    $('.galleryNum[number='+ number-1 +']').addClass('underline');
+  }
+});
+$('#galleryNext').click(function() {
+  number = parseFloat($('.galleryNum.underline').attr('number'));
+  if (number >= 1 && number < 6) {
+    $('.galleryImg').hide();
+    $('.galleryImg:nth-child('+ number+1 +')').show();
+    $('.galleryNum').removeClass('underline');
+    $('.galleryNum[number='+ number+1 +']').addClass('underline');
+  }
+});
+
+//////////////////////////////////////////
+
+#gallery, .galleryImg {
+  height: 400px;
+  margin: auto;
+}
+#gallery {
+  width: 70%;
+  position: relative;
+}
+.galleryImg {
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0; left: 0;
+}
+
+/////////////////////////////
+
+.underline, .underlineHover {
+  position: relative;
+}
+.underline::after, .underlineHover:hover::after {
+  content: '';
+  background-color: #000;
+  width: 100%;
+  height: .5px;
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+}

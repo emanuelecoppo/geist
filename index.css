@@ -1,7 +1,6 @@
 @charset "utf-8";
 
 /*--------------------BROWSER--------------------*/
-
 ::-webkit-scrollbar {
     display: none;
 }
@@ -10,7 +9,6 @@
 }
 
 /*--------------------FONTS--------------------*/
-
 @font-face {font-style: normal; font-weight: 100; font-family: LetteraText; src: url(fonts/LetteraText-Light.woff);}
 @font-face {font-style: normal; font-weight: 200; font-family: LetteraText; src: url(fonts/LetteraText-Regular.woff);}
 @font-face {font-style: normal; font-weight: 300; font-family: LetteraText; src: url(fonts/LetteraText-Medium.woff);}
@@ -33,6 +31,7 @@
   font-family: LetteraText;
   font-style: normal;
   font-weight: 200;
+  box-sizing: border-box;
 }
 .mono {
   font-family: LetteraMono;
@@ -43,32 +42,39 @@ em {
   font-style: italic;
 }
 
-/*--------------------TEXT--------------------*/
-
+/*--------------------FORMAT--------------------*/
 h1 {
-  font-size: 24px;
+  font-size: 30px;
+  margin: 0;
+  margin-bottom: 10px;
+  line-height: 1.5;
 }
 p, .portrait::after {
   font-size: 13px;
   margin: 0;
   line-height: 1.5;
 }
+.small {
+  font-size: 11px;
+}
 a {
   text-decoration: none;
   color: #000;
 }
-.under {
-  text-decoration: underline;
-}
-.underHover:hover {
+.underline, .underlineHover:hover {
   text-decoration: underline;
 }
 .pointer {
   cursor: pointer;
 }
+#main p:not(.mono), #footer p:not(.mono) {
+  margin-bottom: 20px;
+}
+#main p.mono, #footer p.mono {
+  margin-bottom: 4px;
+}
 
 /*--------------------GENERAL--------------------*/
-
 html, body {
   margin: 0;
   padding: 0;
@@ -79,46 +85,65 @@ body {
   width: 850px;
   margin: 25px auto;
 }
-#header > * {
+#main {
+  width: auto;
+  height: auto;
+  padding: 25px 20px;
+  margin-bottom: 20px;
+  border: 1px solid #000;
+}
+#main p:not(.mono) {
   display: inline-block;
 }
+
+/*--------------------HEADER--------------------*/
+#header {
+  margin-bottom: 40px;
+}
+#header > * {
+  display: inline-block;
+  vertical-align: top;
+}
 #logo {
-  width: 45px;
+  width: 70px;
   margin-right: 20px;
 }
-.border {
+#area {
   border: 1px solid #000;
+  padding: 3px 10px 2px 10px;
 }
 #lang {
   float: right;
 }
-#main {
-  width: auto;
-  padding: 30px 20px;
-}
-#footer > div {
-  width: 200px;
-  float: left;
-}
-#footer > div:last-child {
-  float: right;
-}
 
 /*--------------------NAV--------------------*/
-
-#nav > div {
+#nav {
+  margin-top: 40px;
+  font-size: 15px;
+}
+.nav {
   display: inline-block;
-  width: 200px;
+  width: 20%;
+  padding: 5px 10px;
   border: 1px solid #000;
   border-bottom: none;
 }
+.nav:not(:last-child) {
+  border-right: none;
+}
+.navActive {
+  background-color: #000;
+  color: #fff;
+}
 
 /*--------------------MAIN 1 (FILMATI)--------------------*/
-
 #main1 > div {
   display: inline-block;
   vertical-align: top;
 }
+#main1 > div:nth-child(1) {width: 35%}
+#main1 > div:nth-child(2) {width: 65%}
+
 video {
   background-color: #000;
   width: 100%;
@@ -126,6 +151,7 @@ video {
 }
 #controls {
   margin-top: 10px;
+  user-select: none;
 }
 #controls i:not(:last-child) {
   margin-right: 10px;
@@ -133,48 +159,66 @@ video {
 #controls i:last-child {
   float: right;
 }
+#main1 p.mono {
+  margin-bottom: 0;
+  padding-bottom: 4px;
+}
 
 /*--------------------MAIN 2 (MACCHINA)--------------------*/
-
-.image {
+.galleryImg {
   width: 70%;
   height: 400px;
   margin: auto;
-  background-image: url(img/1.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-#gallery {
+#galleryNav {
   text-align: center;
+  user-select: none;
+  margin-top: 10px;
 }
-#gallery p {
+#galleryNav p {
   display: inline-block;
 }
-#gallery p:not(:last-child) {
-  margin-right: 10px;
+#galleryNav p:not(:last-child) {
+  margin-right: 15px;
 }
 
 /*--------------------MAIN 3 (SUPPORTO)--------------------*/
-
 #main3 > div {
   display: inline-block;
   vertical-align: top;
-  width: 45%;
 }
+#main3 > div:nth-child(1) {width: 40%; padding-right: 30px}
+#main3 > div:nth-child(2) {width: 60%}
+
 .portrait {
   display: inline-block;
-  width: 30%;
-  background-color: #ccc;
-  height: 100px;
+  width: calc(100% / 3);
+  height: 200px;
+  margin-bottom: 40px;
+  border-right: 20px solid #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #000;
   position: relative;
-  margin-bottom: 30px;
 }
 .portrait::after {
   content: attr(fake);
   position: absolute;
-  bottom: -20px;
+  bottom: -25px;
 }
 .portrait:hover::after {
   content: attr(real);
 }
+
+/*--------------------FOOTER--------------------*/
+#footer > div {
+  display: inline-block;
+  vertical-align: top;
+}
+#footer > div:nth-child(1) {width: 30%}
+#footer > div:nth-child(2) {width: 40%}
+#footer > div:nth-child(3) {width: 30%}
