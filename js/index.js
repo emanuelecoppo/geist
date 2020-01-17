@@ -60,6 +60,7 @@ function videoPause() {
 }
 function videoStop() {
   videoToggle();
+  video[0].pause();
   video[0].currentTime = 0;
   $('.fa-pause').addClass('fa-play').removeClass('fa-pause');
 }
