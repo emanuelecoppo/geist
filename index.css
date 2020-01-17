@@ -145,10 +145,19 @@ body {
 #main1 > div:nth-child(2) {width: 65%}
 
 video {
-  background-color: #000;
   width: 100%;
-  height: 400px;
+  height: 395px;
+  position: relative;
 }
+/* #player::after {
+  content: 'Video in pausa.';
+  color: red;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+} */
 #controls {
   margin-top: 10px;
   user-select: none;
@@ -161,7 +170,22 @@ video {
 }
 #main1 p.mono {
   margin-bottom: 0;
-  padding-bottom: 4px;
+  padding-bottom: 2px;
+}
+#main1 p:not(.mono) {
+  font-size: 15px;
+}
+#progressBorder {
+  width: 100%;
+  height: 10px;
+  border: 1px solid #000;
+  margin-top: 5px;
+}
+#progress {
+  background-color: #000;
+  width: 0%;
+  height: 100%;
+  /* transition: width .5s linear; */
 }
 
 /*--------------------MAIN 2 (MACCHINA)--------------------*/

@@ -23,46 +23,113 @@ $('#nav3').click(function() {
 
 ////////////////////////////////////////////////// MAIN 1 (FILMATI)
 
-var videoNumber = 1;
-$('.videoNum[number='+ videoNumber +']').children('.videoTitle').addClass('underline');
-// NUMERI
-$('.videoTitle').click(function() {
-  videoNumber = parseFloat($(this).parent().attr('number'));
-  $('.videoTitle').removeClass('underline');
-  $(this).addClass('underline');
+var videoNum = 1;
+var video = $('video');
+var percentage = 0;
+
+function videoChange() {
+  $('.videoNum').removeClass('underline');
+  $('.videoNum[number='+ videoNum +']').addClass('underline');
+  video.attr('src', 'video/'+ (videoNum) +'.mp4');
+  $('#progress').css('width', '0%');
+}
+videoChange();
+
+// LISTA
+$('.videoNum').click(function() {
+  videoNum = parseFloat($(this).attr('number'));
+  $('.videoNum').removeClass('underline');
+  videoChange();
 });
+// CONTROLS
+function videoToggle() {
+  if (video[0].paused==true) {
+    video[0].play();
+    $('.fa-play').addClass('fa-pause').removeClass('fa-play');
+  }
+  else if (video[0].paused==false) {
+    video[0].pause();
+    $('.fa-pause').addClass('fa-play').removeClass('fa-pause');
+  }
+}
+function videoPlay() {
+  video[0].play();
+}
+function videoPause() {
+  video[0].pause();
+}
+function videoStop() {
+  videoToggle();
+  video[0].currentTime = 0;
+  $('.fa-pause').addClass('fa-play').removeClass('fa-pause');
+}
+function videoPrev() {
+  if (videoNum > 1 && videoNum <= 6) {
+    videoNum --;
+    videoChange();
+    $('.fa-pause').addClass('fa-play').removeClass('fa-pause');
+  }
+}
+function videoNext() {
+  if (videoNum >= 1 && videoNum < 6) {
+    videoNum ++;
+    videoChange();
+    $('.fa-pause').addClass('fa-play').removeClass('fa-pause');
+  }
+}
+// ON ENDED
+video.on('ended', function() {
+  videoNext();
+  video[0].play();
+});
+// FULLSCREEN
+function videoFull() {
+    if (video[0].requestFullscreen) {
+      video[0].requestFullscreen();
+    } else if (video[0].mozRequestFullScreen) {
+      video[0].mozRequestFullScreen();
+    } else if (video[0].webkitRequestFullscreen) {
+      video[0].webkitRequestFullscreen();
+    }
+}
+// PROGRESS
+video[0].addEventListener('timeupdate', updateProgress);
+function updateProgress() {
+   var percentage = Math.floor((100 / video[0].duration) * video[0].currentTime);
+   $('#progress').css('width', percentage +'%');
+}
 
 ////////////////////////////////////////////////// MAIN 2 (LA MACCHINA)
 
-var galleryNumber = 1;
+var galleryNum = 1;
 $('.galleryImg').hide();
-$('.galleryImg:nth-child('+ galleryNumber +')').show();
-$('.galleryNum[number='+ galleryNumber +']').addClass('underline');
+$('.galleryImg:nth-child('+ galleryNum +')').show();
+$('.galleryNum[number='+ galleryNum +']').addClass('underline');
 // NUMERI
 $('.galleryNum').click(function() {
-  galleryNumber = parseFloat($(this).attr('number'));
+  galleryNum = parseFloat($(this).attr('number'));
   $('.galleryImg').hide();
-  $('.galleryImg:nth-child('+ galleryNumber +')').show();
+  $('.galleryImg:nth-child('+ galleryNum +')').show();
   $('.galleryNum').removeClass('underline');
   $(this).addClass('underline');
 });
 // INDIETRO
 $('#galleryPrev').click(function() {
-  galleryNumber = parseFloat($('.galleryNum.underline').attr('number'));
-  if (galleryNumber > 1 && galleryNumber <= 6) {
+  galleryNum = parseFloat($('.galleryNum.underline').attr('number'));
+  if (galleryNum > 1 && galleryNum <= 6) {
     $('.galleryImg').hide();
-    $('.galleryImg:nth-child('+ (galleryNumber-1) +')').show();
+    $('.galleryImg:nth-child('+ (galleryNum-1) +')').show();
     $('.galleryNum').removeClass('underline');
-    $('.galleryNum[number='+ (galleryNumber-1) +']').addClass('underline');
+    $('.galleryNum[number='+ (galleryNum-1) +']').addClass('underline');
   }
 });
 // AVANTI
 $('#galleryNext').click(function() {
-  galleryNumber = parseFloat($('.galleryNum.underline').attr('number'));
-  if (galleryNumber >= 1 && galleryNumber < 6) {
+  galleryNum = parseFloat($('.galleryNum.underline').attr('number'));
+  if (galleryNum >= 1 && galleryNum < 6) {
     $('.galleryImg').hide();
-    $('.galleryImg:nth-child('+ (galleryNumber+1) +')').show();
+    $('.galleryImg:nth-child('+ (galleryNum+1) +')').show();
     $('.galleryNum').removeClass('underline');
-    $('.galleryNum[number='+ (galleryNumber+1) +']').addClass('underline');
+    $('.galleryNum[number='+ (galleryNum+1) +']').addClass('underline');
   }
 });

@@ -28,43 +28,47 @@
 
       <div id="main1">
         <div id="videoList">
-          <div class="videoNum" number="1" >
+          <div>
             <p class="mono small">PARTE 01</p>
-            <p class="pointer videoTitle">Introduzione al corso</p>
+            <p number="1" class="videoNum pointer videoTitle">Introduzione al corso</p>
           </div>
-          <div class="videoNum" number="2" >
+          <div>
             <p class="mono small">PARTE 02</p>
-            <p class="pointer underlineHover videoTitle">Morbosità umana</p>
+            <p number="2" class="videoNum pointer underlineHover videoTitle">Morbosità umana</p>
           </div>
-          <div class="videoNum" number="3" >
+          <div>
             <p class="mono small">PARTE 03</p>
-            <p class="pointer underlineHover videoTitle">Schadenfreude</p>
+            <p number="3" class="videoNum pointer underlineHover videoTitle">Schadenfreude</p>
           </div>
-          <div class="videoNum" number="4" >
+          <div>
             <p class="mono small">PARTE 04</p>
-            <p class="pointer underlineHover videoTitle">Teoria della comparazione sociale</p>
+            <p number="4" class="videoNum pointer underlineHover videoTitle">Teoria della comparazione sociale</p>
           </div>
-          <div class="videoNum" number="5" >
+          <div>
             <p class="mono small">PARTE 05</p>
-            <p class="pointer underlineHover videoTitle">La macchina</p>
+            <p number="5" class="videoNum pointer underlineHover videoTitle">La macchina</p>
           </div>
-          <div class="videoNum" number="6" >
+          <div>
             <p class="mono small">PARTE 06</p>
-            <p class="pointer underlineHover videoTitle">Sperimentazione umana</p>
+            <p number="6" class="videoNum pointer underlineHover videoTitle">Sperimentazione umana</p>
           </div>
-          <div class="videoNum" number="7" >
+          <div style="display:none">
             <p class="mono small">PARTE 07</p>
-            <p class="pointer underlineHover videoTitle">Saluti finali</p>
+            <p number="7" class="videoNum pointer underlineHover videoTitle">Saluti finali</p>
           </div>
         </div><!--
      --><div id="player">
-          <video src=""></video>
+          <video onclick="videoToggle()" class="pointer" id="video" src="video/1.mp4"></video>
+          <!-- <progress id="progressBar" min='0' max='100' value='0'></progress> -->
+          <div id="progressBorder">
+            <div id="progress"></div>
+          </div>
           <div id="controls">
-            <i class="pointer fas fa-play"></i>
-            <i class="pointer fas fa-pause"></i>
-            <i class="pointer fas fa-step-backward"></i>
-            <i class="pointer fas fa-step-forward"></i>
-            <i class="pointer fas fa-expand-arrows-alt"></i>
+            <i onclick="videoToggle()" class="pointer fas fa-play"></i>
+            <i onclick="videoStop()" class="pointer fas fa-stop"></i>
+            <i onclick="videoPrev()" class="pointer fas fa-step-backward"></i>
+            <i onclick="videoNext()" class="pointer fas fa-step-forward"></i>
+            <i onclick="videoFull()" class="pointer fas fa-expand-arrows-alt"></i>
           </div>
         </div>
       </div>
@@ -125,6 +129,7 @@
     </div>
 
     <!-- SCRIPT -->
+    <script src="addons/prefixfree.min.js"></script>
     <script src="addons/jquery-3.4.1.min.js"></script>
     <script src="js/index.js"></script>
 
