@@ -33,7 +33,7 @@
   font-weight: 200;
   box-sizing: border-box;
 }
-.mono {
+.mono, .mono span, .mono p {
   font-family: LetteraMono;
   font-style: normal;
   font-weight: 200;
@@ -54,7 +54,7 @@ p, .portrait::after {
   margin: 0;
   line-height: 1.5;
 }
-.small {
+.small, .small span, .small p {
   font-size: 11px;
 }
 a {
@@ -105,7 +105,7 @@ body {
   vertical-align: top;
 }
 #logo {
-  width: 70px;
+  width: 65px;
   margin-right: 20px;
 }
 #area {
@@ -114,6 +114,7 @@ body {
 }
 #lang {
   float: right;
+  user-select: none;
 }
 
 /*--------------------NAV--------------------*/
@@ -127,13 +128,9 @@ body {
   width: 20%;
   padding: 5px 10px;
   outline: 1px solid #000;
-  /* border-bottom: none; */
   background-color: #fff;
   position: relative;
 }
-/* .nav:not(:last-child) {
-  border-right: none;
-} */
 .navActive::after {
   content: '';
   background-color: #fff;
@@ -156,6 +153,7 @@ video {
   width: 100%;
   height: 395px;
   position: relative;
+  background-color: #000;
 }
 /* #player::after {
   content: 'Video in pausa.';
@@ -195,6 +193,19 @@ video {
 #main1 p:not(.mono) {
   font-size: 15px;
 }
+.videoNum {
+  position: relative;
+}
+.videoNum::after {
+  display: none;
+  content: '🡢';
+  position: absolute;
+  top: 0;
+  right: -18px;
+}
+.videoNum:hover::after {
+  display: block;
+}
 
 /*--------------------MAIN 2 (MACCHINA)--------------------*/
 .galleryImg {
@@ -222,7 +233,7 @@ video {
   display: inline-block;
   vertical-align: top;
 }
-#main3 > div:nth-child(1) {width: 40%; padding-right: 30px}
+#main3 > div:nth-child(1) {width: 40%; padding-right: 40px}
 #main3 > div:nth-child(2) {width: 60%}
 
 .portrait {
@@ -254,3 +265,120 @@ video {
 #footer > div:nth-child(1) {width: 30%}
 #footer > div:nth-child(2) {width: 40%}
 #footer > div:nth-child(3) {width: 30%}
+
+/*--------------------POPUP--------------------*/
+.popup {
+  width: 400px;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  outline: 1px solid #000;
+  padding: 30px;
+}
+.popup span {
+  float: right;
+  font-size: 12px;
+}
+.popup p:not(:last-child) {
+  margin-bottom: 30px;
+}
+.invisible {
+  display: none;
+}
+
+/*--------------------ACCESSO--------------------*/
+.container {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  user-select: none;
+}
+.container input { /* Hide browser's default checkbox */
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+.checkmark { /* Style the checkbox */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  outline: 1px solid #000;
+}
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.container input:checked ~ .checkmark {
+  background-color: #000;
+}
+.checkmark:after { /* Create the checkmark (hidden when not checked) */
+  content: '';
+  position: absolute;
+  display: none;
+}
+.container input:checked ~ .checkmark:after { /* Show the checkmark when checked */
+  display: block;
+}
+.container .checkmark:after { /* Style the checkmark */
+  top: 15%;
+  left: 35%;
+  width: 20%;
+  height: 40%;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.popup#accesso {
+  width: 450px;
+}
+.popup #logo {
+  display: block;
+  margin: auto;
+  margin-bottom: 40px;
+}
+button {
+  width: 100%;
+  padding: 7px 0;
+  font-size: 17px;
+  background-color: #fff;
+  outline: 1px solid #000;
+  border: none;
+  user-select: none;
+}
+.non-active {
+  opacity: .25;
+}
+
+/*--------------------MOBILE--------------------*/
+#mobile {
+  box-sizing: border-box;
+  margin: 10px;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: calc(100vw - 20px);
+  padding: .8em;
+  padding-bottom: 1em;
+  background-color: #000;
+  color: #fff !important;
+  font-size: 1em;
+}
+#mobile p {
+  margin-bottom: .7em;
+}
+#mobile span {
+  outline: 1px solid #fff;
+  padding: .1em .8em;
+}
+@media only screen and (max-width: 700px) {
+  #mobile {
+    display: block;
+  }
+}

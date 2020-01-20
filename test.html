@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <meta name='theme-color' content='#000000'>
+    <title>GEIST • Schadenfreudemetertest</title>
+    <link rel='icon' href='img/favicon.ico'/>
+    <link rel='stylesheet' href='index.css'/>
+    <script src='https://kit.fontawesome.com/241170c77c.js' crossorigin='anonymous'></script>
+  </head>
+  <body>
+
+    <div id='header'>
+      <img id='logo' src='img/geist.svg'>
+      <p id='area' class='mono'>
+        <span lang='it'>AREA RISERVATA</span>
+        <span lang='de'>RESERVIERTEN BEREICH</span>
+      </p>
+      <p id='lang'>
+        <a href='test.html?de' class='pointer underlineHover'>DE</a>&nbsp;&nbsp;&nbsp;
+        <a href='test.html' class='pointer underlineHover'>IT</a>
+      </p>
+    </div>
+
+    <h1>Schadenfreudemetertest</h1>
+    <p class='small'>
+      <span lang='it'>CORSO DI AGGIORNAMENTO TELEMATICO</span>
+      <span lang='de'>TELEMATISCHER AUFFRISCHUNGSKURS</span>
+    </p>
+
+    <div id='nav'>
+      <div id='nav1' class='mono pointer nav navActive'>
+        <span lang='it'>FILMATI</span>
+        <span lang='de'>VIDEOS</span>
+      </div><!--
+   --><div id='nav2' class='mono pointer nav'>
+        <span lang='it'>LA MACCHINA</span>
+        <span lang='de'>DIE MASCHINE</span>
+      </div><!--
+   --><div id='nav3' class='mono pointer nav'>
+        <span lang='it'>SUPPORTO</span>
+        <span lang='de'>SUPPORT</span>
+      </div>
+    </div>
+
+    <div id='main'>
+
+      <div id='main1'>
+        <div id='videoList'>
+          <div>
+            <p class='mono small'>
+              <span lang='it'>PARTE 01</span>
+              <span lang='de'>TEIL 01</span>
+            </p>
+            <p number='1' class='videoNum pointer underlineHover'>
+              <span lang='it'>Introduzione al corso</span>
+              <span lang='de'>Einleitung</span>
+            </p>
+          </div>
+          <div>
+            <p class='mono small'>
+              <span lang='it'>PARTE 02</span>
+              <span lang='de'>TEIL 02</span>
+            </p>
+            <p number='2' class='videoNum pointer underlineHover'>
+              <span lang='it'>Morbosità umana</span>
+              <span lang='de'>Morbidität beim Menschen</span>
+            </p>
+          </div>
+          <div>
+            <p class='mono small'>
+              <span lang='it'>PARTE 03</span>
+              <span lang='de'>TEIL 03</span>
+            </p>
+            <p number='3' class='videoNum pointer underlineHover'>Schadenfreude</p>
+          </div>
+          <div>
+            <p class='mono small'>
+              <span lang='it'>PARTE 04</span>
+              <span lang='de'>TEIL 04</span>
+            </p>
+            <p number='4' class='videoNum pointer underlineHover'>
+              <span lang='it'>Teoria della comparazione sociale</span>
+              <span lang='de'>Theorie des sozialen Vergleichs</span>
+            </p>
+          </div>
+          <div>
+            <p class='mono small'>
+              <span lang='it'>PARTE 05</span>
+              <span lang='de'>TEIL 05</span>
+            </p>
+            <p number='5' class='videoNum pointer underlineHover'>
+              <span lang='it'>La macchina</span>
+              <span lang='de'>Die Maschine</span>
+            </p>
+          </div>
+          <div>
+            <p class='mono small'>
+              <span lang='it'>PARTE 06</span>
+              <span lang='de'>TEIL 06</span>
+            </p>
+            <p number='6' class='videoNum pointer underlineHover'>
+              <span lang='it'>Sperimentazione umana</span>
+              <span lang='de'>Menschenversuch</span>
+            </p>
+          </div>
+          <div style='display:none'>
+            <p class='mono small'>
+              <span lang='it'>PARTE 07</span>
+              <span lang='de'>TEIL 07</span>
+            </p>
+            <p number='7' class='videoNum pointer underlineHover'>
+              <span lang='it'>Saluti finali</span>
+              <span lang='de'>Abschließende Grüße</span>
+            </p>
+          </div>
+        </div><!--
+     --><div id='player'>
+          <video onclick='videoToggle()' class='pointer' id='video' src='video/1.mp4'></video>
+          <div id='progressBorder'><div id='progress'></div></div>
+          <div id='controls'>
+            <i onclick='videoToggle()' class='pointer fas fa-play'></i>
+            <i onclick='videoStop()' class='pointer fas fa-stop'></i>
+            <i onclick='videoPrev()' class='pointer fas fa-step-backward'></i>
+            <i onclick='videoNext()' class='pointer fas fa-step-forward'></i>
+            <i onclick='videoFull()' class='pointer fas fa-expand-arrows-alt'></i>
+          </div>
+        </div>
+      </div>
+
+      <div id='main2'>
+        <div id='gallery'>
+          <div class='galleryImg' style='background-image:url(img/1.png)'></div>
+          <div class='galleryImg' style='background-image:url(img/2.png)'></div>
+          <div class='galleryImg' style='background-image:url(img/3.png)'></div>
+          <div class='galleryImg' style='background-image:url(img/4.png)'></div>
+          <div class='galleryImg' style='background-image:url(img/5.png)'></div>
+          <div class='galleryImg' style='background-image:url(img/6.png)'></div>
+        </div>
+        <div id='galleryNav'>
+            <p class='mono pointer underlineHover' id='galleryPrev'><span lang='it'>«Indietro</span><span lang='de'>«Zurück</span></p>
+            <p class='mono pointer underlineHover galleryNum' number='1'>1</p>
+            <p class='mono pointer underlineHover galleryNum' number='2'>2</p>
+            <p class='mono pointer underlineHover galleryNum' number='3'>3</p>
+            <p class='mono pointer underlineHover galleryNum' number='4'>4</p>
+            <p class='mono pointer underlineHover galleryNum' number='5'>5</p>
+            <p class='mono pointer underlineHover galleryNum' number='6'>6</p>
+            <p class='mono pointer underlineHover' id='galleryNext'><span lang='it'>Avanti»</span><span lang='de'>Aufwärts»</span></p>
+        </div>
+      </div>
+
+      <div id='main3'>
+        <div>
+          <p>
+            <span lang='it'>Per eventuali chiarimenti o informazioni aggiuntive, rivolgersi direttamente ai responsabili del Dipartimento di Antropologia.</span>
+            <span lang='de'>Für weitere Informationen wenden Sie sich bitte direkt an die Leiter der Abteilung für Anthropologie.</span>
+          </p>
+          <p class='mono small'>
+            <span lang='it'>UFFICI</span>
+            <span lang='de'>BÜROS</span>
+          </p>
+          <p>
+            <span lang='it'>Lentzeallee 94<br>14195, Berlino</span>
+            <span lang='de'>Lentzeallee 94<br>14195, Berlin</span>
+          </p>
+          <p class='mono small'>
+            <span lang='it'>CONTATTI</span>
+            <span lang='de'>KONTAKT</span>
+          </p>
+          <p class='pointer underlineHover'>contact@afa.geist.de</p>
+          <p class='mono small'>
+            <span lang='it'>???</span>
+            <span lang='de'>???</span>
+          </p>
+          <p class='pointer underlineHover' onclick='popup()'>
+            <span lang='it'>Informazioni sul progetto 🡢</span>
+            <span lang='de'>Informationen über das Projekt 🡢</span>
+          </p>
+        </div><!--
+     --><div id='staff'>
+          <div class='portrait' style='background-image:url(img/staff.jpg)' fake='Adolf Hitler' real='Alessia Arosio'></div><!--
+       --><div class='portrait' style='background-image:url(img/staff.jpg)' fake='Adolf Hitler' real='Lorenzo Bernini'></div><!--
+       --><div class='portrait' style='background-image:url(img/staff.jpg)' fake='Adolf Hitler' real='Emanuele Coppo'></div><!--
+       --><div class='portrait' style='background-image:url(img/staff.jpg)' fake='Adolf Hitler' real='Enrico Monasteri'></div><!--
+       --><div class='portrait' style='background-image:url(img/staff.jpg)' fake='Adolf Hitler' real='Filippo Testa'></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id='footer'>
+      <div>
+        <p class='mono small'>
+          <span lang='it'>SEDE</span>
+          <span lang='de'>SITZ</span>
+        </p>
+        <p>
+          <span lang='it'>Lentzeallee 94 14195, Berlino</span>
+          <span lang='de'>Lentzeallee 94 14195, Berlin</span>
+        </p>
+      </div><!--
+   --><div>
+        <p class='mono small'>SOCIAL</p>
+        <p><a class='underlineHover' href='http://instagram.com/geist.ita'>Instagram 🡢</a></p>
+      </div><!--
+   --><div>
+        <p class='mono small'>© 2020</p>
+        <p>Gedankliches Experimentelles Institut für Spezielle Therapien</p>
+      </div>
+    </div>
+
+    <div class='mono popup invisible' id='info'>
+      <span class='pointer' onclick='popup()'>╳</span>
+      <p>*** INFORMAZIONI ***</p>
+      <p>Progetto realizzato per il Laboratorio di Sintesi Finale, Sezione C1, a.a. 2019-2020.</p>
+      <p>Politecnico di Milano,<br>Design della Comunicazione.</p>
+    </div>
+
+    <div id='mobile'>
+      <p>Questa pagina non è ottimizzata per la navigazione da dispositivo mobile. Accedi da un computer desktop per una visualizzazione corretta.</p>
+      <span class='mono pointer'>OK</span>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src='addons/prefixfree.min.js'></script>
+    <script src='addons/jquery-3.4.1.min.js'></script>
+    <script src='js/index.js'></script>
+
+  </body>
+</html>

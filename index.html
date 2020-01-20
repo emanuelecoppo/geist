@@ -1,134 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
-    <title>GEIST • Schadenfreudemetertest</title>
-    <link rel="stylesheet" href="index.css"/>
-    <script src="https://kit.fontawesome.com/241170c77c.js" crossorigin="anonymous"></script>
+    <meta charset='utf-8'>
+    <meta name='viewport' width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <meta name='theme-color' content='#000000'>
+    <title>GEIST • Area Riservata</title>
+    <link rel='icon' href='img/favicon.ico'/>
+    <link rel='stylesheet' href='index.css'/>
+    <script src='https://kit.fontawesome.com/241170c77c.js' crossorigin='anonymous'></script>
   </head>
   <body>
 
-    <div id="header">
-      <img id="logo" src="img/geist.svg">
-      <p id="area" class="mono">AREA RISERVATA</p>
-      <p id="lang"><span class="pointer underlineHover">DE</span>&nbsp;&nbsp;&nbsp;<span class="pointer underline underlineHover">IT</span></p>
-    </div>
+    <div class='mono popup' id='accesso'>
 
-    <h1>Schadenfreudemetertest</h1>
-    <p class="mono">CORSO DI AGGIORNAMENTO TELEMATICO</p>
+      <img src='img/geist.svg' id='logo'>
 
-    <div id="nav">
-      <div id="nav1" class="mono pointer nav navActive">FILMATI</div><!--
-   --><div id="nav2" class="mono pointer nav">LA MACCHINA</div><!--
-   --><div id="nav3" class="mono pointer nav">SUPPORTO</div>
-    </div>
+      <p style='text-align:center'>*** ATTENZIONE ***</p>
+      <p>Stai per effettuare l'accesso ad un area riservata agli addetti ai lavori. Il contenuto di questo portale è altamente confidenziale. Ogni divulgazione non autorizzata potrà essere perseguita penalmente.</p>
 
-    <div id="main">
+      <label class='container mono small pointer'><p>Accetto le condizioni e desidero procedere.</p>
+        <input class='pointer' type='checkbox' onclick='checkbox()'autocomplete='off'>
+        <span class='checkmark'></span>
+      </label>
 
-      <div id="main1">
-        <div id="videoList">
-          <div>
-            <p class="mono small">PARTE 01</p>
-            <p number="1" class="videoNum pointer videoTitle">Introduzione al corso</p>
-          </div>
-          <div>
-            <p class="mono small">PARTE 02</p>
-            <p number="2" class="videoNum pointer underlineHover videoTitle">Morbosità umana</p>
-          </div>
-          <div>
-            <p class="mono small">PARTE 03</p>
-            <p number="3" class="videoNum pointer underlineHover videoTitle">Schadenfreude</p>
-          </div>
-          <div>
-            <p class="mono small">PARTE 04</p>
-            <p number="4" class="videoNum pointer underlineHover videoTitle">Teoria della comparazione sociale</p>
-          </div>
-          <div>
-            <p class="mono small">PARTE 05</p>
-            <p number="5" class="videoNum pointer underlineHover videoTitle">La macchina</p>
-          </div>
-          <div>
-            <p class="mono small">PARTE 06</p>
-            <p number="6" class="videoNum pointer underlineHover videoTitle">Sperimentazione umana</p>
-          </div>
-          <div style="display:none">
-            <p class="mono small">PARTE 07</p>
-            <p number="7" class="videoNum pointer underlineHover videoTitle">Saluti finali</p>
-          </div>
-        </div><!--
-     --><div id="player">
-          <video onclick="videoToggle()" class="pointer" id="video" src="video/1.mp4"></video>
-          <div id="progressBorder"><div id="progress"></div></div>
-          <div id="controls">
-            <i onclick="videoToggle()" class="pointer fas fa-play"></i>
-            <i onclick="videoStop()" class="pointer fas fa-stop"></i>
-            <i onclick="videoPrev()" class="pointer fas fa-step-backward"></i>
-            <i onclick="videoNext()" class="pointer fas fa-step-forward"></i>
-            <i onclick="videoFull()" class="pointer fas fa-expand-arrows-alt"></i>
-          </div>
-        </div>
-      </div>
-
-      <div id="main2">
-        <div id="gallery">
-          <div class="galleryImg" style="background-image:url(img/1.png)"></div>
-          <div class="galleryImg" style="background-image:url(img/2.png)"></div>
-          <div class="galleryImg" style="background-image:url(img/3.png)"></div>
-          <div class="galleryImg" style="background-image:url(img/4.png)"></div>
-          <div class="galleryImg" style="background-image:url(img/5.png)"></div>
-          <div class="galleryImg" style="background-image:url(img/6.png)"></div>
-        </div>
-        <div id="galleryNav">
-            <p class="mono pointer underlineHover" id="galleryPrev">«Indietro</p>
-            <p class="mono pointer underlineHover galleryNum" number="1">1</p>
-            <p class="mono pointer underlineHover galleryNum" number="2">2</p>
-            <p class="mono pointer underlineHover galleryNum" number="3">3</p>
-            <p class="mono pointer underlineHover galleryNum" number="4">4</p>
-            <p class="mono pointer underlineHover galleryNum" number="5">5</p>
-            <p class="mono pointer underlineHover galleryNum" number="6">6</p>
-            <p class="mono pointer underlineHover" id="galleryNext">Avanti»</p>
-        </div>
-      </div>
-
-      <div id="main3">
-        <div>
-          <p>Per eventuali chiarimenti o informazioni aggiuntive, rivolgersi direttamente ai responsabili del <em>Dipartimento di Antropologia.</em></p>
-          <p class="mono small">UFFICI</p>
-          <p>Lentzeallee 94 14195, Berlino</p>
-          <p class="mono small">CONTATTI</p>
-          <p class="pointer underlineHover">adolfhitler@geistlab.de</p>
-        </div><!--
-     --><div id="staff">
-          <div class="portrait" style="" fake="Adolf Hitler" real="Alessia Arosio"></div><!--
-       --><div class="portrait" style="" fake="Adolf Hitler" real="Lorenzo Bernini"></div><!--
-       --><div class="portrait" style="" fake="Adolf Hitler" real="Emanuele Coppo"></div><!--
-       --><div class="portrait" style="" fake="Adolf Hitler" real="Enrico Monasteri"></div><!--
-       --><div class="portrait" style="" fake="Adolf Hitler" real="Filippo Testa"></div>
-        </div>
-      </div>
-
-    </div>
-
-    <div id="footer">
-      <div>
-        <p class="mono small">SEDE</p>
-        <p>Lentzeallee 94 14195, Berlino</p>
-      </div><!--
-   --><div>
-        <p class="mono small">SOCIAL</p>
-        <p><a class="underlineHover" href="http://instagram.com/geist.ita">Instagram</a></p>
-      </div><!--
-   --><div>
-        <p class="mono small">&copy; 2020</p>
-        <p>Gedankliches Experimentelles Institut für Spezielle Therapien</p>
-      </div>
+      <button id='procedi' class='mono non-active'><p>PROCEDI</p></button>
     </div>
 
     <!-- SCRIPT -->
-    <script src="addons/prefixfree.min.js"></script>
-    <script src="addons/jquery-3.4.1.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src='addons/prefixfree.min.js'></script>
+    <script src='addons/jquery-3.4.1.min.js'></script>
+    <script src='js/index.js'></script>
 
   </body>
 </html>

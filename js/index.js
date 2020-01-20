@@ -1,3 +1,37 @@
+////////////////////////////////////////////////// MOBILE
+
+$('#mobile span').click(function() {
+  $('#mobile').hide();
+});
+
+////////////////////////////////////////////////// POPUP + ACCESSO
+
+function checkbox() {
+  $('#procedi').toggleClass('non-active pointer');
+}
+$('#procedi').click(function() {
+  if (!$(this).hasClass('non-active')) {
+    window.location.href = 'test.html';
+  }
+});
+function popup() {
+  $('.popup').toggleClass('invisible');
+}
+
+////////////////////////////////////////////////// LANG
+
+var lang = decodeURIComponent(window.location.search).substring(1);
+
+if (lang=='de') {
+  $('[lang=it]').hide();
+  $('[lang=de]').show();
+  $('#lang a:nth-child(1)').addClass('underline');
+} else {
+  $('[lang=de]').hide();
+  $('[lang=it]').show();
+  $('#lang a:nth-child(2)').addClass('underline');
+}
+
 ////////////////////////////////////////////////// NAV
 
 $('#main2, #main3').hide();
