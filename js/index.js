@@ -79,11 +79,11 @@ $('.videoNum').click(function() {
 function videoToggle() {
   if (video[0].paused==true) {
     video[0].play();
-    $('.fa-play').addClass('fa-pause').removeClass('fa-play');
+    $('.fa-play').attr('src', 'icons/pause.svg');;
   }
   else if (video[0].paused==false) {
     video[0].pause();
-    $('.fa-pause').addClass('fa-play').removeClass('fa-pause');
+    $('.fa-play').attr('src', 'icons/play.svg');;
   }
 }
 function videoPlay() {
@@ -96,20 +96,20 @@ function videoStop() {
   videoToggle();
   video[0].pause();
   video[0].currentTime = 0;
-  $('.fa-pause').addClass('fa-play').removeClass('fa-pause');
+  $('.fa-play').attr('src', 'icons/play.svg');;
 }
 function videoPrev() {
   if (videoNum > 1 && videoNum <= 6) {
     videoNum --;
     videoChange();
-    $('.fa-pause').addClass('fa-play').removeClass('fa-pause');
+    $('.fa-play').attr('src', 'icons/play.svg');;
   }
 }
 function videoNext() {
   if (videoNum >= 1 && videoNum < 6) {
     videoNum ++;
     videoChange();
-    $('.fa-pause').addClass('fa-play').removeClass('fa-pause');
+    $('.fa-play').attr('src', 'icons/play.svg');;
   }
 }
 // ON ENDED

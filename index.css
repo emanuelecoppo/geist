@@ -81,6 +81,14 @@ html, body {
   color: #000;
   background-color: #fff;
 }
+html {
+  width: 1280px;
+}
+@media only screen and (min-width: 1280px) {
+  html {
+    width: 100vw;
+  }
+}
 body {
   width: 850px;
   margin: 25px auto;
@@ -121,7 +129,7 @@ body {
 #nav {
   margin-top: 40px;
   font-size: 15px;
-  margin-bottom: .5px;
+  margin-bottom: 1px;
 }
 .nav {
   display: inline-block;
@@ -180,10 +188,13 @@ video {
   margin-top: 10px;
   user-select: none;
 }
-#controls i:not(:last-child) {
+#controls img {
+  height: 15px;
+}
+#controls img:not(:last-child) {
   margin-right: 10px;
 }
-#controls i:last-child {
+#controls img:last-child {
   float: right;
 }
 #main1 p.mono {
@@ -193,15 +204,19 @@ video {
 #main1 p:not(.mono) {
   font-size: 15px;
 }
-.videoNum {
+.videoNum, .arrow {
   position: relative;
+}
+.videoNum::after, .arrow::after {
+  content: url('../icons/arrow.svg');
+  height: 11px;
+  width: 11px;
+  position: absolute;
+  top: 0;
+  right: -17px;
 }
 .videoNum::after {
   display: none;
-  content: '🡢';
-  position: absolute;
-  top: 0;
-  right: -18px;
 }
 .videoNum:hover::after {
   display: block;
@@ -358,26 +373,28 @@ button {
 /*--------------------MOBILE--------------------*/
 #mobile {
   box-sizing: border-box;
-  margin: 10px;
+  margin: 20px;
   display: none;
   position: fixed;
   bottom: 0;
   left: 0;
-  width: calc(100vw - 20px);
-  padding: .8em;
-  padding-bottom: 1em;
+  width: calc(100% - 40px);
+  padding: 30px;
+  padding-bottom: 40px;
   background-color: #000;
   color: #fff !important;
-  font-size: 1em;
+}
+#mobile p, #mobile span {
+  font-size: 40px;
 }
 #mobile p {
-  margin-bottom: .7em;
+  margin-bottom: 25px;
 }
 #mobile span {
-  outline: 1px solid #fff;
-  padding: .1em .8em;
+  border: 2px solid #fff;
+  padding: 5px 20px;
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 600px) and (hover: none) {
   #mobile {
     display: block;
   }
