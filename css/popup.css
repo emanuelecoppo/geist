@@ -1,0 +1,88 @@
+.invisible {
+  display: none;
+}
+/*--------------------POPUP--------------------*/
+.popup {
+  width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  outline: 1px solid #000;
+  padding: 30px;
+}
+.popup span {
+  float: right;
+  font-size: 12px;
+  font-family: LetteraMono;
+}
+.popup p:not(:last-child) {
+  margin-bottom: 30px;
+}
+/*--------------------ACCESSO--------------------*/
+.popup#accesso {
+  width: 450px;
+  position: absolute;
+}
+.popup #logo {
+  display: block;
+  margin: auto;
+  margin-bottom: 40px;
+}
+button {
+  width: 100%;
+  padding: 7px 0;
+  font-size: 17px;
+  background-color: #fff;
+  outline: 1px solid #000;
+  border: none;
+  user-select: none;
+}
+.non-active {
+  opacity: .25;
+}
+.container {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  user-select: none;
+}
+.container input { /* Hide default checkbox */
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+.checkmark { /* Style checkbox */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  outline: 1px solid #000;
+}
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.container input:checked ~ .checkmark {
+  background-color: #000;
+}
+.checkmark:after { /* Create checkmark */
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container input:checked ~ .checkmark:after { /* Show checkmark when checked */
+  display: block;
+}
+.container .checkmark:after { /* Style checkmark */
+  top: 15%;
+  left: 35%;
+  width: 20%;
+  height: 40%;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}

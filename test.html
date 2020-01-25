@@ -6,7 +6,8 @@
     <meta name="theme-color" content="#000000">
     <title>GEIST • Schadenfreudemetertest</title>
     <link rel="icon" href="img/favicon.ico"/>
-    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/mobile.css"/>
   </head>
   <body>
 
@@ -34,8 +35,8 @@
         <span lang="de">VIDEOS</span>
       </div><!--
    --><div id="nav2" class="mono pointer nav">
-        <span lang="it">LA MACCHINA</span>
-        <span lang="de">DIE MASCHINE</span>
+        <span lang="it"><span>LA </span>MACCHINA</span>
+        <span lang="de"><span>DIE </span>MASCHINE</span>
       </div><!--
    --><div id="nav3" class="mono pointer nav">
         <span lang="it">SUPPORTO</span>
@@ -104,7 +105,7 @@
               <span lang="de">Menschenversuch</span>
             </p>
           </div>
-          <div style="display:none">
+          <div>
             <p class="mono small">
               <span lang="it">PARTE 07</span>
               <span lang="de">TEIL 07</span>
@@ -116,10 +117,15 @@
           </div>
         </div><!--
      --><div id="player">
-          <video onclick="videoToggle()" class="pointer" id="video" src="video/1.mp4"></video>
+          <div id="videoWrap" class="pointer" onclick="videoToggle()">
+            <span class="mono small" lang="it">Caricamento...</span>
+            <span class="mono small" lang="de">Loading...</span>
+            <div><video id="video" src="video/1.mp4"></video></div>
+            <img id="playOverlay" src="icons/play-white.svg">
+          </div>
           <div id="progressBorder"><div id="progress"></div></div>
           <div id="controls">
-            <img src="icons/play.svg" onclick="videoToggle()" class="pointer fa-play">
+            <img src="icons/play.svg" onclick="videoToggle()" class="pointer play">
             <img src="icons/stop.svg" onclick="videoStop()" class="pointer">
             <img src="icons/step-backward.svg" onclick="videoPrev()" class="pointer">
             <img src="icons/step-forward.svg" onclick="videoNext()" class="pointer">
@@ -138,36 +144,42 @@
           <div class="galleryImg" style="background-image:url(img/6.png)"></div>
         </div>
         <div id="galleryNav">
-            <p class="mono pointer underlineHover" id="galleryPrev"><span lang="it">«Indietro</span><span lang="de">«Zurück</span></p>
+            <p class="mono pointer underlineHover" id="galleryPrev">
+              <span lang="it">«<span>Indietro</span></span>
+              <span lang="de">«<span>Zurück</span></span>
+            </p>
             <p class="mono pointer underlineHover galleryNum" number="1">1</p>
             <p class="mono pointer underlineHover galleryNum" number="2">2</p>
             <p class="mono pointer underlineHover galleryNum" number="3">3</p>
             <p class="mono pointer underlineHover galleryNum" number="4">4</p>
             <p class="mono pointer underlineHover galleryNum" number="5">5</p>
             <p class="mono pointer underlineHover galleryNum" number="6">6</p>
-            <p class="mono pointer underlineHover" id="galleryNext"><span lang="it">Avanti»</span><span lang="de">Aufwärts»</span></p>
+            <p class="mono pointer underlineHover" id="galleryNext">
+              <span lang="it"><span>Avanti</span>»</span>
+              <span lang="de"><span>Aufwärts</span>»</span>
+            </p>
         </div>
       </div>
 
       <div id="main3">
-        <div>
-          <p>
+        <div id="contact">
+          <p id="contact_1">
             <span lang="it">Per eventuali chiarimenti o informazioni aggiuntive, rivolgersi direttamente ai responsabili del Dipartimento di Antropologia.</span>
             <span lang="de">Für weitere Informationen wenden Sie sich bitte direkt an die Leiter der Abteilung für Anthropologie.</span>
           </p>
-          <p class="mono small">
+          <p id="contact_2" class="mono small">
             <span lang="it">UFFICI</span>
             <span lang="de">BÜROS</span>
           </p>
           <p>
-            <span lang="it">Lentzeallee 94<br>14195, Berlino</span>
-            <span lang="de">Lentzeallee 94<br>14195, Berlin</span>
+            <span lang="it">Lentzeallee 94 <br>14195, Berlino</span>
+            <span lang="de">Lentzeallee 94 <br>14195, Berlin</span>
           </p>
           <p class="mono small">
             <span lang="it">CONTATTI</span>
             <span lang="de">KONTAKT</span>
           </p>
-          <p class="pointer underlineHover">contact@afa.geist.de</p>
+          <p>contact@afa.geist.de</p>
           <p class="mono small">
             <span lang="it">???</span>
             <span lang="de">???</span>
@@ -178,11 +190,12 @@
           </p>
         </div><!--
      --><div id="staff">
-          <div class="portrait" style="background-image:url(img/staff.jpg)" fake="Adolf Hitler" real="Alessia Arosio"></div><!--
-       --><div class="portrait" style="background-image:url(img/staff.jpg)" fake="Adolf Hitler" real="Lorenzo Bernini"></div><!--
-       --><div class="portrait" style="background-image:url(img/staff.jpg)" fake="Adolf Hitler" real="Emanuele Coppo"></div><!--
-       --><div class="portrait" style="background-image:url(img/staff.jpg)" fake="Adolf Hitler" real="Enrico Monasteri"></div><!--
-       --><div class="portrait" style="background-image:url(img/staff.jpg)" fake="Adolf Hitler" real="Filippo Testa"></div>
+          <div><div class="portrait" style="background-image:url(img/staff.jpg)" fake="Hans Weber" real="Francesco Aragona"></div></div><!--
+       --><div><div class="portrait" style="background-image:url(img/staff.jpg)" fake="Agnes Schneider" real="Alessia Arosio"></div></div><!--
+       --><div><div class="portrait" style="background-image:url(img/staff.jpg)" fake="Adolf Hitler" real="Lorenzo Bernini"></div></div><!--
+       --><div><div class="portrait" style="background-image:url(img/staff.jpg)" fake="Adolf Hitler" real="Emanuele Coppo"></div></div><!--
+       --><div><div class="portrait" style="background-image:url(img/staff.jpg)" fake="Adolf Hitler" real="Enrico Monasteri"></div></div><!--
+       --><div><div class="portrait" style="background-image:url(img/staff.jpg)" fake="Friedrich Müller" real="Filippo Testa"></div></div>
         </div>
       </div>
 
@@ -195,8 +208,8 @@
           <span lang="de">SITZ</span>
         </p>
         <p>
-          <span lang="it">Lentzeallee 94 14195, Berlino</span>
-          <span lang="de">Lentzeallee 94 14195, Berlin</span>
+          <span lang="it">Lentzeallee 94 <br>14195, Berlino</span>
+          <span lang="de">Lentzeallee 94 <br>14195, Berlin</span>
         </p>
       </div><!--
    --><div>
@@ -205,7 +218,7 @@
       </div><!--
    --><div>
         <p class="mono small">© 2020</p>
-        <p>Gedankliches Experimentelles Institut für Spezielle Therapien</p>
+        <p>Gedankliches Experimentelles <br>Institut für Spezielle Therapien</p>
       </div>
     </div>
 
@@ -214,11 +227,6 @@
       <p>*** INFORMAZIONI ***</p>
       <p>Progetto realizzato per il Laboratorio di Sintesi Finale, Sezione C1, a.a. 2019-2020.</p>
       <p>Politecnico di Milano,<br>Design della Comunicazione.</p>
-    </div>
-
-    <div id="mobile">
-      <p>Questa pagina non è ottimizzata per la navigazione da dispositivo mobile. Accedi da un computer desktop per una visualizzazione corretta.</p>
-      <span class="mono pointer">OK</span>
     </div>
 
     <!-- SCRIPT -->

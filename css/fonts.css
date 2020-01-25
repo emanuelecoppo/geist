@@ -1,0 +1,31 @@
+@font-face {font-style: normal; font-weight: 100; font-family: LetteraText; src: url(../fonts/LetteraText-Light.woff);}
+@font-face {font-style: normal; font-weight: 200; font-family: LetteraText; src: url(../fonts/LetteraText-Regular.woff);}
+@font-face {font-style: normal; font-weight: 300; font-family: LetteraText; src: url(../fonts/LetteraText-Medium.woff);}
+@font-face {font-style: normal; font-weight: 400; font-family: LetteraText; src: url(../fonts/LetteraText-Bold.woff);}
+@font-face {font-style: normal; font-weight: 500; font-family: LetteraText; src: url(../fonts/LetteraText-Black.woff);}
+@font-face {font-style: italic; font-weight: 100; font-family: LetteraText; src: url(../fonts/LetteraText-LightItalic.woff);}
+@font-face {font-style: italic; font-weight: 200; font-family: LetteraText; src: url(../fonts/LetteraText-RegularItalic.woff);}
+@font-face {font-style: italic; font-weight: 300; font-family: LetteraText; src: url(../fonts/LetteraText-MediumItalic.woff);}
+@font-face {font-style: italic; font-weight: 400; font-family: LetteraText; src: url(../fonts/LetteraText-BoldItalic.woff);}
+@font-face {font-style: italic; font-weight: 500; font-family: LetteraText; src: url(../fonts/LetteraText-BlackItalic.woff);}
+/* MONO */
+@font-face {font-style: normal; font-weight: 100; font-family: LetteraMono; src: url(../fonts/LetteraMono-Light.woff);}
+@font-face {font-style: normal; font-weight: 200; font-family: LetteraMono; src: url(../fonts/LetteraMono-Regular.woff);}
+@font-face {font-style: normal; font-weight: 300; font-family: LetteraMono; src: url(../fonts/LetteraMono-Medium.woff);}
+@font-face {font-style: italic; font-weight: 100; font-family: LetteraMono; src: url(../fonts/LetteraMono-LightItalic.woff);}
+@font-face {font-style: italic; font-weight: 200; font-family: LetteraMono; src: url(../fonts/LetteraMono-RegularItalic.woff);}
+@font-face {font-style: italic; font-weight: 300; font-family: LetteraMono; src: url(../fonts/LetteraMono-MediumItalic.woff);}
+
+* {
+  font-family: LetteraText, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+}
+.mono, .mono span, .mono p {
+  font-family: LetteraMono, monospace;
+  font-style: normal;
+  font-weight: 200;
+}
+em {
+  font-style: italic;
+}

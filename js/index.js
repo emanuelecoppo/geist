@@ -1,8 +1,26 @@
-////////////////////////////////////////////////// MOBILE
+////////////////////////////////////////////////// WINDOW RESIZE
 
-$('#mobile span').click(function() {
-  $('#mobile').hide();
-});
+function windowResize() {
+  w = $(window).width();
+  if (w <= 750) {
+    $('#videoList').insertAfter($('#player'));
+    $('#staff').insertBefore($('#contact'));
+    $('#contact_1').insertBefore($('#staff'));
+    $('#area').addClass('small');
+  } else {
+    $('#videoList').insertBefore($('#player'));
+    $('#staff').insertAfter($('#contact'));
+    $('#contact_1').insertBefore($('#contact_2'));
+    $('#area').removeClass('small');
+  }
+  if (w > 1280) {
+    $('body').css('zoom', w/1280);
+  } else {
+    $('body').css('zoom', 'initial');
+  }
+}
+$(window).resize(windowResize);
+windowResize();
 
 ////////////////////////////////////////////////// POPUP + ACCESSO
 
@@ -69,6 +87,15 @@ function videoChange() {
 }
 videoChange();
 
+// PLAY OVERLAY
+function checkLoad() {
+  if (video[0].readyState === 4) {
+    $('#playOverlay').show();
+  } else {
+    setTimeout(checkLoad, 100);
+  }
+}
+checkLoad();
 // LISTA
 $('.videoNum').click(function() {
   videoNum = parseFloat($(this).attr('number'));
@@ -79,37 +106,35 @@ $('.videoNum').click(function() {
 function videoToggle() {
   if (video[0].paused==true) {
     video[0].play();
-    $('.fa-play').attr('src', 'icons/pause.svg');;
+    $('.play').attr('src', 'icons/pause.svg');
+    $('#playOverlay').hide();
   }
   else if (video[0].paused==false) {
     video[0].pause();
-    $('.fa-play').attr('src', 'icons/play.svg');;
+    $('.play').attr('src', 'icons/play.svg');
+    $('#playOverlay').show();
   }
 }
-function videoPlay() {
-  video[0].play();
-}
-function videoPause() {
-  video[0].pause();
-}
 function videoStop() {
-  videoToggle();
   video[0].pause();
   video[0].currentTime = 0;
-  $('.fa-play').attr('src', 'icons/play.svg');;
+  $('.play').attr('src', 'icons/play.svg');
+  $('#playOverlay').show();
 }
 function videoPrev() {
   if (videoNum > 1 && videoNum <= 6) {
     videoNum --;
     videoChange();
-    $('.fa-play').attr('src', 'icons/play.svg');;
+    $('.play').attr('src', 'icons/play.svg');
+    videoToggle();
   }
 }
 function videoNext() {
   if (videoNum >= 1 && videoNum < 6) {
     videoNum ++;
     videoChange();
-    $('.fa-play').attr('src', 'icons/play.svg');;
+    $('.play').attr('src', 'icons/play.svg');
+    videoToggle();
   }
 }
 // ON ENDED
