@@ -211,20 +211,30 @@ video {
   vertical-align: top;
 }
 #contact {
-  width: 40%;
+  width: 45%;
 }
 #staff {
-  width: 60%;
+  width: 55%;
   padding-left: 20px;
 }
-#staff > div {
+#staff p {
+  width: 100%;
+  margin-bottom: 10px !important;
+  text-transform: uppercase;
+}
+#staff1 > div, #staff2 > div, #staff p {
+  padding-left: 15px;
+}
+#staff1 > div, #staff2 > div {
   display: inline-block;
   width: calc(100% / 3);
-  margin-bottom: 40px;
-  padding-left: 20px;
+  margin-bottom: 30px;
+}
+#staff2 p {
+  margin-top: 15px;
 }
 .portrait {
-  height: 200px;
+  height: 140px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
